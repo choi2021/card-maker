@@ -15,9 +15,7 @@ class AuthService {
   }
 
   async login(platform) {
-    return signInWithPopup(this.auth, this[`${platform}Provider`]).then(
-      (result) => console.log(result)
-    );
+    return signInWithPopup(this.auth, this[`${platform}Provider`]);
   }
 }
 
