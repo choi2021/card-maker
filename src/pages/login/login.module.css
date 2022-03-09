@@ -1,0 +1,38 @@
+@value makerWhite,makerBlack from "../../common/colors.css";
+
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header,
+.content,
+.footer {
+  width: 35%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: makerWhite;
+  height: 30%;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.btn {
+  cursor: pointer;
+  height: 2.5rem;
+  width: 95%;
+  margin-bottom: 0.6em;
+  font-size: 1.2rem;
+  background-color: makerWhite;
+  border-radius: 1em;
+  border: 2.5px solid makerBlack;
+}
