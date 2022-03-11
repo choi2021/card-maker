@@ -1,27 +1,34 @@
 @value makerWhite,makerBlack from "../../common/colors.css";
 
 .login {
-  height: 100vh;
+  width: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.header,
-.content,
-.footer {
-  width: 35%;
-}
-
 .content {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: makerWhite;
-  height: 30%;
 }
 
+.list {
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.item {
+  list-style: none;
+  margin: auto;
+  width: 95%;
+}
 .title {
   font-size: 2rem;
 }
@@ -29,7 +36,7 @@
 .btn {
   cursor: pointer;
   height: 2.5rem;
-  width: 95%;
+  width: 100%;
   margin-bottom: 0.6em;
   font-size: 1.2rem;
   background-color: makerWhite;

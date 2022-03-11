@@ -5,27 +5,33 @@ import styles from "./login.module.css";
 
 const Login = ({ auth }) => {
   const BtnClick = (e) => {
-    const platform = e.target.innerText;
+    const platform = e.target.textContent;
     auth.login(platform.toLowerCase());
+  };
+
+  const handleLogout = () => {
+    return;
   };
 
   return (
     <section className={styles.login}>
-      <div className={styles.header}>
-        <Header></Header>
-      </div>
-      <main className={styles.content}>
+      <Header />
+      <section className={styles.content}>
         <h1 className={styles.title}>Login</h1>
-        <button className={styles.btn} onClick={BtnClick}>
-          Google
-        </button>
-        <button className={styles.btn} onClick={BtnClick}>
-          Github
-        </button>
-      </main>
-      <div className={styles.footer}>
-        <Footer></Footer>
-      </div>
+        <ul className={styles.list}>
+          <li className={styles.item}>
+            <button className={styles.btn} onClick={BtnClick}>
+              Google
+            </button>
+          </li>
+          <li className={styles.item}>
+            <button className={styles.btn} onClick={BtnClick}>
+              Github
+            </button>
+          </li>
+        </ul>
+      </section>
+      <Footer />
     </section>
   );
 };
