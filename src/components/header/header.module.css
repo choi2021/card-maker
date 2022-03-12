@@ -9,12 +9,12 @@
 
 .logo {
   width: 3rem;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .title {
-  margin: 0.5em 0;
-  font-size: 1.5rem;
+  margin: 0.2em 0;
+  font-size: 1.3rem;
   color: makerWhite;
 }
 

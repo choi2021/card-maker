@@ -1,0 +1,11 @@
+@value makerGreen,makerWhite,makerLightGrey from "../../common/colors.css";
+
+.button {
+  background-color: makerGreen;
+  color: makerWhite;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5em;
+  font-size: 0.8rem;
+  border: 1px solid makerLightGrey;
+}

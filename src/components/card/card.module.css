@@ -1,0 +1,70 @@
+@value makerPink,makerWhite,makerBlack,makerColorful,makerWheat from "../../common/colors.css";
+
+.container {
+  padding: 0.2em 0;
+  width: 100%;
+  max-width: 30rem;
+  margin: auto;
+  height: 9rem;
+  display: flex;
+  align-items: center;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+
+.container.dark {
+  background-color: makerBlack;
+  color: makerWhite;
+}
+
+.container.colorful {
+  background: makerColorful;
+  color: makerWhite;
+}
+
+.container.light {
+  background-color: makerWhite;
+  color: black;
+}
+
+.img {
+  width: 10em;
+  height: 10em;
+  padding: 1em;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  border-radius: 50%;
+}
+
+.metadata {
+  margin-left: 1em;
+  flex: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.name {
+  margin: 0.2em 0;
+  font-size: 1.2rem;
+}
+
+.company,
+.job,
+.email,
+.comment {
+  text-align: left;
+  width: 100%;
+  margin: 0.1em 0;
+  font-size: 0.7rem;
+}
+
+.company::after {
+  content: "";
+  width: 90%;
+  height: 2px;
+  display: block;
+  background-color: makerWheat;
+  transform: translateY(0.05em);
+}
