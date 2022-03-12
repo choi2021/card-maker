@@ -43,7 +43,11 @@ function App({ auth }) {
       ></Route>
       <Route
         path="/main"
-        element={<Main logout={user && handleLogout} />}
+        element={
+          <div className={styles.main}>
+            <Main logout={user && handleLogout} />
+          </div>
+        }
       ></Route>
     </Routes>
   );

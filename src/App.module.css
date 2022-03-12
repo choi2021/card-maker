@@ -4,3 +4,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.main {
+  margin: auto;
+  max-width: 90rem;
+  height: 100vh;
+}
