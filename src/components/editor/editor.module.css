@@ -7,6 +7,10 @@
   border-right: 2px solid makerLightGrey;
 }
 
+.list {
+  padding: 0;
+}
+
 .title {
   font-size: 1.5rem;
   color: makerGreen;

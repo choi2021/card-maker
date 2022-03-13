@@ -6,8 +6,9 @@ import styles from "./main.module.css";
 import Editor from "../../components/editor/editor";
 
 const Main = ({ logout }) => {
-  const [cards, setCards] = useState([
-    {
+  const [cards, setCards] = useState({
+    1: {
+      id: 1,
       name: "Ellie",
       company: "Samsung",
       theme: "Dark",
@@ -16,9 +17,9 @@ const Main = ({ logout }) => {
       comment: "Dont't forget to code your dream",
       fileName: "ellie",
       fileURL: null,
-      id: 1,
     },
-    {
+    2: {
+      id: 2,
       name: "Bob",
       company: "Uber",
       theme: "Light",
@@ -27,9 +28,9 @@ const Main = ({ logout }) => {
       comment: "Dont't forget to code your dream",
       fileName: "ellie",
       fileURL: null,
-      id: 2,
     },
-    {
+    3: {
+      id: 3,
       name: "Ellie",
       company: "Samsung",
       theme: "Colorful",
@@ -38,19 +39,35 @@ const Main = ({ logout }) => {
       comment: "Dont't forget to code your dream",
       fileName: "ellie",
       fileURL: null,
-      id: 3,
     },
-  ]);
+  });
 
-  const addForm = (card) => {
-    setCards([...cards, { ...card }]);
+  const createOrUpdateForm = (card) => {
+    setCards((cards) => {
+      const updated = { ...cards };
+      updated[card.id] = card;
+      return updated;
+    });
+  };
+
+  const deleteForm = (card) => {
+    setCards((cards) => {
+      const willUpdated = { ...cards };
+      delete willUpdated[card.id];
+      return willUpdated;
+    });
   };
 
   return (
     <section className={styles.main}>
       <Header onLogout={logout} />
       <div className={styles.container}>
-        <Editor cards={cards} onAdd={addForm} />
+        <Editor
+          cards={cards}
+          onAdd={createOrUpdateForm}
+          onDelete={deleteForm}
+          onUpdate={createOrUpdateForm}
+        />
         <CardPreview cards={cards} />
       </div>
       <Footer />
