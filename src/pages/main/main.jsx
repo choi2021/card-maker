@@ -42,11 +42,15 @@ const Main = ({ logout }) => {
     },
   ]);
 
+  const addForm = (card) => {
+    setCards([...cards, { ...card }]);
+  };
+
   return (
     <section className={styles.main}>
       <Header onLogout={logout} />
       <div className={styles.container}>
-        <Editor cards={cards} />
+        <Editor cards={cards} onAdd={addForm} />
         <CardPreview cards={cards} />
       </div>
       <Footer />

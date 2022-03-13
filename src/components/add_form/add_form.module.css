@@ -12,7 +12,7 @@
 .input,
 .textarea,
 .select,
-.delete,
+.add,
 .fileInput {
   width: 100%;
   font-size: 0.8rem;
@@ -28,10 +28,10 @@
   flex: 30%;
 }
 
-.delete,
+.add,
 .fileInput {
-  flex: 50%;
   padding: 0;
+  flex: 50%;
 }
 .textarea {
   padding: 0.5em;
