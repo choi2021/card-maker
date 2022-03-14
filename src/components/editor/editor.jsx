@@ -3,7 +3,7 @@ import AddForm from "../add_form/add_form";
 import CardInfo from "../card_info/card_info";
 import styles from "./editor.module.css";
 
-const Editor = ({ cards, onAdd, onDelete, onUpdate }) => {
+const Editor = ({ cards, onAdd, onDelete, onUpdate, ImgFileInput }) => {
   return (
     <section className={styles.editor}>
       <h1 className={styles.title}>Card Editor</h1>
@@ -15,9 +15,10 @@ const Editor = ({ cards, onAdd, onDelete, onUpdate }) => {
             id={id}
             onDelete={onDelete}
             onUpdate={onUpdate}
+            ImgFileInput={ImgFileInput}
           />
         ))}
-        <AddForm onAdd={onAdd}></AddForm>
+        <AddForm onAdd={onAdd} ImgFileInput={ImgFileInput}></AddForm>
       </ul>
     </section>
   );

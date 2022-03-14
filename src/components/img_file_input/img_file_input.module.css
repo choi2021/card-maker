@@ -1,12 +1,51 @@
-@value makerPink,makerBlack,makerLightGrey from "../../common/colors.css";
+@value makerLightPink,makerGreen,makerBlack,makerLightGrey,makerGrey,makerWhite from "../../common/colors.css";
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fileUpload {
+  position: absolute;
+  display: none;
+}
+
 .button {
   width: 100%;
-  background-color: makerPink;
-  color: makerBlack;
+  height: 100%;
   font-weight: bold;
   cursor: pointer;
-  padding: 0.5em;
   flex: 1 1 50%;
   font-size: 0.8rem;
-  border: 1px solid makerLightGrey;
+  color: makerBlack;
+  border: 0;
+}
+
+.button.onFile {
+  background-color: makerLightPink;
+}
+
+.button.default {
+  background-color: makerLightGrey;
+}
+
+.spinner {
+  border: 4px solid makerPink;
+  border-top: 4px solid makerWhite;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  animation: spin 1000ms linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

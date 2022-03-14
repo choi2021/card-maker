@@ -5,7 +5,7 @@ import Header from "../../components/header/header";
 import styles from "./main.module.css";
 import Editor from "../../components/editor/editor";
 
-const Main = ({ logout }) => {
+const Main = ({ logout, ImgFileInput }) => {
   const [cards, setCards] = useState({
     1: {
       id: 1,
@@ -67,6 +67,7 @@ const Main = ({ logout }) => {
           onAdd={createOrUpdateForm}
           onDelete={deleteForm}
           onUpdate={createOrUpdateForm}
+          ImgFileInput={ImgFileInput}
         />
         <CardPreview cards={cards} />
       </div>

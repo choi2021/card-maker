@@ -1,9 +1,8 @@
 import React from "react";
 import Button from "../button/button";
-import ImgFileInput from "../img_file_input/img_file_input";
 import styles from "./card_info.module.css";
 
-const CardInfo = ({ card, onDelete, onUpdate }) => {
+const CardInfo = ({ card, onDelete, onUpdate, ImgFileInput }) => {
   const { name, company, theme, job, email, comment, fileName } = card;
   const handleDelete = (e) => {
     e.preventDefault();
@@ -15,6 +14,10 @@ const CardInfo = ({ card, onDelete, onUpdate }) => {
     }
     const { name, value } = e.target;
     onUpdate({ ...card, [name]: value });
+  };
+
+  const onFileChange = (file) => {
+    onUpdate({ ...card, fileName: file.name, fileURL: file.url });
   };
 
   return (
@@ -64,7 +67,11 @@ const CardInfo = ({ card, onDelete, onUpdate }) => {
         onChange={updateCard}
       ></textarea>
       <div className={styles.fileInput}>
-        <ImgFileInput name={fileName}></ImgFileInput>
+        <ImgFileInput
+          fileName={fileName}
+          card={card}
+          onFileChange={onFileChange}
+        ></ImgFileInput>
       </div>
       <div className={styles.delete}>
         <Button name={"Delete"} onClick={handleDelete}></Button>

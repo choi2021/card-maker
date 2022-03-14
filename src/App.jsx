@@ -4,7 +4,7 @@ import styles from "./App.module.css";
 import Login from "./pages/login/login";
 import Main from "./pages/main/main";
 
-function App({ auth }) {
+function App({ auth, ImgFileInput }) {
   const navigate = useNavigate();
   const [user, setUser] = useState();
   const handleLogin = (value) => {
@@ -45,7 +45,7 @@ function App({ auth }) {
         path="/main"
         element={
           <div className={styles.main}>
-            <Main logout={user && handleLogout} />
+            <Main logout={user && handleLogout} ImgFileInput={ImgFileInput} />
           </div>
         }
       ></Route>
