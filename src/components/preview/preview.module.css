@@ -1,6 +1,7 @@
 @value makerGrey,makerGreen from "../../common/colors.css";
 
 .preview {
+  overflow-y: auto;
   flex-basis: 50%;
   text-align: center;
 }

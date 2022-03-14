@@ -5,6 +5,7 @@ const firebaseConfig = {
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   appId: process.env.REACT_APP_APP_ID,
+  databaseURL: "https://card-maker-1096d-default-rtdb.firebaseio.com",
 };
 
 // Initialize Firebase

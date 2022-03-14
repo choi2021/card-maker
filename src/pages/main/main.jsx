@@ -5,42 +5,18 @@ import Header from "../../components/header/header";
 import styles from "./main.module.css";
 import Editor from "../../components/editor/editor";
 
-const Main = ({ logout, ImgFileInput }) => {
-  const [cards, setCards] = useState({
-    1: {
-      id: 1,
-      name: "Ellie",
-      company: "Samsung",
-      theme: "Dark",
-      job: "SW engineer",
-      email: "dream.coder@gmail.com",
-      comment: "Dont't forget to code your dream",
-      fileName: "ellie",
-      fileURL: null,
-    },
-    2: {
-      id: 2,
-      name: "Bob",
-      company: "Uber",
-      theme: "Light",
-      job: "SW engineer",
-      email: "bog@gmail.com",
-      comment: "Dont't forget to code your dream",
-      fileName: "ellie",
-      fileURL: null,
-    },
-    3: {
-      id: 3,
-      name: "Ellie",
-      company: "Samsung",
-      theme: "Colorful",
-      job: "SW engineer",
-      email: "dream.coder@gmail.com",
-      comment: "Dont't forget to code your dream",
-      fileName: "ellie",
-      fileURL: null,
-    },
-  });
+const Main = ({ logout, ImgFileInput, database, user }) => {
+  const [cards, setCards] = useState({});
+
+  useEffect(() => {
+    if (!user) {
+      return;
+    }
+    const stopRead = database.readData(user, (cards) => {
+      setCards(cards);
+    });
+    return () => stopRead();
+  }, [user]);
 
   const createOrUpdateForm = (card) => {
     setCards((cards) => {
@@ -48,6 +24,7 @@ const Main = ({ logout, ImgFileInput }) => {
       updated[card.id] = card;
       return updated;
     });
+    database.writeData(user, card);
   };
 
   const deleteForm = (card) => {
@@ -56,6 +33,7 @@ const Main = ({ logout, ImgFileInput }) => {
       delete willUpdated[card.id];
       return willUpdated;
     });
+    database.removeData(user, card).then(console.log);
   };
 
   return (

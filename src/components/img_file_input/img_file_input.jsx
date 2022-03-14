@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import styles from "./img_file_input.module.css";
 
-const ImgFileInput = ({ card, fileName, onFileChange, upload }) => {
+const ImgFileInput = ({ fileName, onFileChange, upload }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const inputRef = useRef();

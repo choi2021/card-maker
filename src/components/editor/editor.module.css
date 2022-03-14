@@ -2,6 +2,7 @@
 
 .editor {
   padding: 0 1em;
+  overflow-y: auto;
   flex-basis: 50%;
   text-align: center;
   border-right: 2px solid makerLightGrey;
