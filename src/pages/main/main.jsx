@@ -27,7 +27,7 @@ const Main = ({ logout, ImgFileInput, database, user }) => {
       });
       database.writeData(user, card);
     },
-    [user, database]
+    [database]
   );
 
   const deleteForm = (card) => {

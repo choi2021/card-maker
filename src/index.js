@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import ReactDOM from "react-dom";
 import "./index.module.css";
 import App from "./App";
@@ -12,9 +12,9 @@ const authService = new AuthService();
 const database = new Database();
 const uploadService = new UploadService(process.env.REACT_APP_CLOUD_API_KEY);
 
-const FileInput = (props) => {
+const FileInput = memo((props) => {
   return <ImgFileInput {...props} upload={uploadService} />;
-};
+});
 
 ReactDOM.render(
   <BrowserRouter>

@@ -1,10 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./card.module.css";
 
 const DEFAULT_IMAGE = "/images/default_logo.png";
 
-const Card = ({ card }) => {
-  const { name, company, theme, job, email, comment, fileURL } = card;
+const Card = memo(({ name, company, theme, job, email, comment, fileURL }) => {
   const url = fileURL || DEFAULT_IMAGE;
   return (
     <li className={`${styles.container} ${pickStyles(theme)}`}>
@@ -18,7 +17,7 @@ const Card = ({ card }) => {
       </div>
     </li>
   );
-};
+});
 
 export default Card;
 
