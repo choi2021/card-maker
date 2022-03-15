@@ -3,7 +3,7 @@ import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import styles from "./login.module.css";
 
-const Login = ({ auth, login, logout }) => {
+const Login = ({ auth, logout }) => {
   const BtnClick = (e) => {
     const platform = e.target.textContent;
     auth.login(platform.toLowerCase()); //

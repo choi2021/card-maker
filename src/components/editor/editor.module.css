@@ -1,8 +1,7 @@
 @value makerLightGrey,makerGreen from "../../common/colors.css";
-
+@value mediaQuery from "../../common/size.css";
 .editor {
   padding: 0 1em;
-  overflow-y: auto;
   flex-basis: 50%;
   text-align: center;
   border-right: 2px solid makerLightGrey;
@@ -15,4 +14,10 @@
 .title {
   font-size: 1.5rem;
   color: makerGreen;
+}
+
+@media screen and(min-width=mediaQuery) {
+  .editor {
+    overflow-y: unset;
+  }
 }

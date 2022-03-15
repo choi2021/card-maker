@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import CardPreview from "../../components/preview/preview";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
@@ -16,16 +16,19 @@ const Main = ({ logout, ImgFileInput, database, user }) => {
       setCards(cards);
     });
     return () => stopRead();
-  }, [user]);
+  }, [user, database]);
 
-  const createOrUpdateForm = (card) => {
-    setCards((cards) => {
-      const updated = { ...cards };
-      updated[card.id] = card;
-      return updated;
-    });
-    database.writeData(user, card);
-  };
+  const createOrUpdateForm = useCallback(
+    (card) => {
+      setCards((cards) => {
+        const updated = { ...cards };
+        updated[card.id] = card;
+        return updated;
+      });
+      database.writeData(user, card);
+    },
+    [user, database]
+  );
 
   const deleteForm = (card) => {
     setCards((cards) => {

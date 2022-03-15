@@ -15,7 +15,6 @@ const ImgFileInput = ({ fileName, onFileChange, upload }) => {
     setIsLoading(true);
     const uploaded = await upload.postUpload(fileName);
     setIsLoading(false);
-    console.log(uploaded.original_filename);
 
     onFileChange({
       name: uploaded.original_filename,

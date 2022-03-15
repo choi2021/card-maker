@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Button from "../button/button";
 import styles from "./card_info.module.css";
 
 const CardInfo = ({ card, onDelete, onUpdate, ImgFileInput }) => {
   const { name, company, theme, job, email, comment, fileName } = card;
-  const handleDelete = (e) => {
-    e.preventDefault();
-    onDelete(card);
-  };
+  const handleDelete = useCallback(
+    (e) => {
+      e.preventDefault();
+      onDelete(card);
+    },
+    [card, onDelete]
+  );
   const updateCard = (e) => {
     if (e.currentTarget === null) {
       return;

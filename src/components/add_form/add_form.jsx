@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { memo, useRef, useState } from "react";
 import Button from "../button/button";
 import styles from "./add_form.module.css";
 
-const AddForm = ({ onAdd, ImgFileInput }) => {
+const AddForm = memo(({ onAdd, ImgFileInput }) => {
   const nameRef = useRef();
   const formRef = useRef();
   const companyRef = useRef();
@@ -96,6 +96,6 @@ const AddForm = ({ onAdd, ImgFileInput }) => {
       </div>
     </form>
   );
-};
+});
 
 export default AddForm;

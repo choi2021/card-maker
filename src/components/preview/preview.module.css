@@ -1,4 +1,5 @@
 @value makerGrey,makerGreen from "../../common/colors.css";
+@value mediaQuery from '../../common/size.css';
 
 .preview {
   overflow-y: auto;
@@ -15,4 +16,10 @@
 .list {
   width: 100%;
   padding: 0.5 2em;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .preview {
+    overflow: unset;
+  }
 }

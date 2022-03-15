@@ -1,19 +1,9 @@
-import {
-  child,
-  get,
-  getDatabase,
-  off,
-  onValue,
-  ref,
-  remove,
-  set,
-} from "firebase/database";
-import { firebaseApp } from "./firebase";
+import { off, onValue, ref, remove, set } from "firebase/database";
+import { firebaseDB } from "./firebase";
 
 class Database {
   constructor() {
-    this.app = firebaseApp;
-    this.database = getDatabase(this.app);
+    this.database = firebaseDB;
   }
 
   writeData(userId, card) {
